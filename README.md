@@ -7,8 +7,9 @@ http://gspread.readthedocs.org/en/latest/oauth2.html
 
 ###Python3+ and modules
 ```
-pip install --upgrade oauth2client
-pip install PyOpenSSL
+pip3 install --upgrade oauth2client
+pip3 install PyOpenSSL
+pip3 install gspread
 ```
 
 ## Usage
