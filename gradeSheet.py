@@ -108,9 +108,12 @@ def main(argv):
     print (args.spreadsheet)
     wks = gc.open(args.spreadsheet).get_worksheet(args.worksheet)
 
-    print ("\nSelecting worksheet %s" % wks.title)
+    print ("\nSelecting worksheet: %s" % wks.title)
 
     column_dict = get_relevant_columns(wks)
+    if len(column_dict) == 0:
+        print("No editable columns. Exiting.")
+        return
 
     while(1):
         selected_student_rows = []
@@ -121,7 +124,6 @@ def main(argv):
             selected_student_rows.append(prompt_for_student(wks))
 
         # prompt for grade in an orderly mannner
-        #  grade_dict = {}
         grade_dict = dict.fromkeys(column_dict, '')
 
         for key in sorted(column_dict, key=column_dict.__getitem__):
