@@ -7,9 +7,23 @@ http://gspread.readthedocs.org/en/latest/oauth2.html
 
 ###Python3+ and modules
 ```
-pip install --upgrade oauth2client
-pip install PyOpenSSL
+pip3 install --upgrade oauth2client
+pip3 install PyOpenSSL
+pip3 install gspread
 ```
 
 ## Usage
-Place json credentials into the same directory as the script
+Place json credentials into the same directory as the python script for auto-detection or enter in file path
+
+The following command specifies the location of the spreadsheet on Google Drive and the spreadsheet's worksheet to edit. Also two students are allowed to work on a project
+```
+python3 gradeSheet.py --spreadsheet google_file --worksheet 1 --group 2
+```
+
+Note: Google spreadsheet must share its content with the 'client_email` in the credentials json
+
+For more help
+```
+python3 gradeSheet.py -h
+```
+
